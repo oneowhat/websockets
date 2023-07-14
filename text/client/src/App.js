@@ -7,8 +7,8 @@ function App() {
 
 
   useEffect(() => {
-    const socket = new WebSocket(`ws://localhost:8080/messages`);   
-    //const socket = new WebSocket(`ws://${window.location.host}/messages`);   
+    // const socket = new WebSocket(`ws://localhost:8080/messages`);   
+    const socket = new WebSocket(`ws://${window.location.host}/messages`);   
     socket.onmessage = function (message) {
       const p = JSON.parse(message.data);
       setMessage(p)
